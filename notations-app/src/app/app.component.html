@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="container">
+    <app-sidebar
+      [activeTabId]="activeTabId"
+      [tabs]="tabs"
+      (onTabChanged)="onTabChange($event)"
+    ></app-sidebar>
+    <div class="line"></div>
+    <main class="maincontainer">
+      <h1>{{ findActiveTab()?.title }}</h1>
+      <app-create-note
+        [categories]="tabs"
+        (noteCreated)="onNoteAdded($event)"
+      ></app-create-note>
+      <app-note-list [notes]="getNotesToShow()"></app-note-list>
+    </main>
+  </div>
+</div>

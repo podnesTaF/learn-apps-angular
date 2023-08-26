@@ -1,0 +1,15 @@
+button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.clicks {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.diff-color {
+  color: white;
+}

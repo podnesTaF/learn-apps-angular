@@ -1,0 +1,40 @@
+<div class="sidebar-container">
+  <div class="sidebar">
+    <h4 class="active">{{ getActiveTab()?.title || "All notes" }}</h4>
+    <ul class="list">
+      <li
+        (click)="changeTab()"
+        [ngClass]="{
+          active: !activeTabId
+        }"
+      >
+        All notes
+      </li>
+      <li
+        *ngFor="let tab of tabs"
+        (click)="changeTab(tab.id)"
+        [ngClass]="{
+          active: tab.id === getActiveTab()?.id
+        }"
+      >
+        {{ tab.title }}
+      </li>
+    </ul>
+    <div>
+      <h4 class="new-button" (click)="toggleInput()">
+        <mat-icon fontIcon="add"></mat-icon> New Category
+      </h4>
+      <div class="wrapper">
+        <mat-form-field *ngIf="isInputVisible" class="add-category">
+          <input matInput [(ngModel)]="newTab" />
+          <mat-icon
+            matSuffix
+            fontIcon="check"
+            class="submit"
+            (click)="onClick()"
+          ></mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>

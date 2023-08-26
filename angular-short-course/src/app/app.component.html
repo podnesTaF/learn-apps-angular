@@ -1,0 +1,7 @@
+<div class="max-w-2xl mx-auto container pt-5">
+  <h3 class="text-2xl">{{ title | titlecase }}</h3>
+  <app-product
+    *ngFor="let product of products"
+    [product]="product"
+  ></app-product>
+</div>

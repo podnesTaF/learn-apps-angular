@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="create-note-wrapper">
+    <input matInput [(ngModel)]="text" />
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="isDisabled()"
+      (click)="createNote()"
+    >
+      Create
+    </button>
+  </div>
+  <div>
+    <p>Select a category</p>
+    <select class="select" [(ngModel)]="categoryId">
+      <option *ngFor="let cat of categories" [value]="cat.id">
+        {{ cat.title }}
+      </option>
+    </select>
+  </div>
+</div>

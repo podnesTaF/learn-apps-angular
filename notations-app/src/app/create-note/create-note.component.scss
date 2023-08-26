@@ -1,0 +1,37 @@
+.container {
+  margin: 1rem 0;
+}
+.create-note-wrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  gap: 10px;
+  input {
+    width: 70%;
+    padding: 2px 5px;
+    min-height: auto;
+    margin-bottom: 0 !important;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    outline: none;
+    &:focus {
+      border: 1px xolid lightblue;
+    }
+  }
+  button {
+    width: 30%;
+  }
+}
+p {
+  margin-bottom: 5px;
+}
+
+.select {
+  width: 200px;
+  padding: 4px;
+  border: 1px solid lightgrey;
+  outline: none;
+  &:focus {
+    border: 1px xolid lightblue;
+  }
+}

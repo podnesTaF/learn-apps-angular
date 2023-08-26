@@ -1,0 +1,19 @@
+<style>
+  .online {
+    color: white;
+  }
+  .offline {
+    color: yellow;
+  }
+</style>
+<h4
+  [ngStyle]="{
+    backgroundColor: getColor()
+  }"
+  [ngClass]="{
+    online: serverStatus === 'online',
+    offline: serverStatus === 'offline'
+  }"
+>
+  Server with #{{ serverId }} is {{ serverStatus }}
+</h4>

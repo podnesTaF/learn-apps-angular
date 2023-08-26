@@ -1,0 +1,18 @@
+<div class="note-container">
+  <mat-checkbox
+    class="check"
+    (change)="onCheck()"
+    [checked]="checked"
+  ></mat-checkbox>
+  <p
+    class="text"
+    [ngClass]="{
+      finished: note?.isFinished
+    }"
+  >
+    {{ note?.text }}
+  </p>
+  <mat-chip class="badge" cdkDrag>
+    {{ note?.category?.title }}
+  </mat-chip>
+</div>

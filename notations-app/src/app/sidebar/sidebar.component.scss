@@ -1,0 +1,52 @@
+.sidebar-container {
+  display: flex;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .active {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &.active {
+      color: lightblue;
+    }
+  }
+}
+
+.new-button {
+  font-size: 1.5rem;
+  color: lightgray;
+  margin-bottom: 1rem;
+  width: 100%;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.wrapper {
+  width: 220px;
+}
+.add-category input {
+  padding: 2px 5px;
+}
+
+.submit {
+  cursor: pointer;
+}
