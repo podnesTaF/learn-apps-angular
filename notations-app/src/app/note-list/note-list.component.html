@@ -1,5 +1,5 @@
 <ul class="tab-list">
   <li *ngFor="let note of notes">
-    <app-note-item [note]="note"></app-note-item>
+    <app-note-item (editNote)="(editNote)" [note]="note"></app-note-item>
   </li>
 </ul>

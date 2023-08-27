@@ -5,9 +5,9 @@
       mat-raised-button
       color="primary"
       [disabled]="isDisabled()"
-      (click)="createNote()"
+      (click)="handleNote()"
     >
-      Create
+      {{ noteToEdit ? "Edit" : "Create" }}
     </button>
   </div>
   <div>

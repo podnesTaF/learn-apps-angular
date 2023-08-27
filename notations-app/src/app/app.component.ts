@@ -78,6 +78,8 @@ export class AppComponent {
     },
   ];
 
+  noteToEdit?: INote;
+
   getNotesToShow() {
     if (!this.activeTabId) return this.notes;
     const activeTab = this.findActiveTab();
@@ -100,5 +102,25 @@ export class AppComponent {
       category: this.tabs.find((tab) => tab.id === note.categoryId)!,
       id: this.notes.length + 1,
     });
+  }
+
+  onEditNote({ noteId }: { noteId: number }) {
+    this.noteToEdit = this.notes.find((note) => note.id === noteId);
+  }
+
+  onEditedNote({
+    noteId,
+    text,
+    categoryId,
+  }: {
+    noteId: number;
+    text: string;
+    categoryId: number;
+  }) {
+    const note = this.notes.find((note) => note.id === noteId);
+    if (!note) return;
+    note.text = text;
+    note.category = this.tabs.find((tab) => tab.id === categoryId)!;
+    this.noteToEdit = undefined;
   }
 }

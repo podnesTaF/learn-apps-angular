@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { INote } from '../models/note';
 
 @Component({
@@ -8,4 +8,5 @@ import { INote } from '../models/note';
 })
 export class NoteListComponent {
   @Input() notes: INote[] = [];
+  @Output() editNote = new EventEmitter<{ noteId: number }>();
 }

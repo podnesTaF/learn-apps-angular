@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { INote } from 'src/app/models/note';
 
 @Component({
@@ -8,6 +8,7 @@ import { INote } from 'src/app/models/note';
 })
 export class NoteItemComponent implements OnInit {
   @Input() note?: INote;
+  @Output() editNote = new EventEmitter<{ noteId: number }>();
 
   checked = false;
 
@@ -19,6 +20,11 @@ export class NoteItemComponent implements OnInit {
     if (!this.note) return;
     this.checked = !this.checked;
     this.note.isFinished = this.checked;
+  }
+
+  onEdit() {
+    if (!this.note) return;
+    this.editNote.emit({ noteId: this.note.id });
   }
 
   ngOnInit(): void {

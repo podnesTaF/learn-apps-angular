@@ -9,10 +9,15 @@
     <main class="maincontainer">
       <h1>{{ findActiveTab()?.title }}</h1>
       <app-create-note
+        [noteToEdit]="noteToEdit"
+        (noteEdited)="onEditedNote($event)"
         [categories]="tabs"
         (noteCreated)="onNoteAdded($event)"
       ></app-create-note>
-      <app-note-list [notes]="getNotesToShow()"></app-note-list>
+      <app-note-list
+        (editNote)="onEditNote($event)"
+        [notes]="getNotesToShow()"
+      ></app-note-list>
     </main>
   </div>
 </div>

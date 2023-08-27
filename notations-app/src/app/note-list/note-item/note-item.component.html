@@ -12,6 +12,7 @@
   >
     {{ note?.text }}
   </p>
+  <mat-icon fontIcon="edit" (click)="onEdit()" matTooltip="Edit"> </mat-icon>
   <mat-chip class="badge" cdkDrag>
     {{ note?.category?.title }}
   </mat-chip>
