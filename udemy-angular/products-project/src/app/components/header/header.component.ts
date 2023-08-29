@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  collapsed = true;
+  @Output() navigated = new EventEmitter<string>();
+  @Input() activePage = 'recipes';
+
+  onNavigate(page: string) {
+    this.navigated.emit(page);
+  }
 }

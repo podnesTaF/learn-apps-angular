@@ -1,0 +1,8 @@
+<app-game-control
+  (gameStarted)="onGameStarted()"
+  (gameStopped)="onGameStopped()"
+></app-game-control>
+<div *ngFor="let count of getCountArray(); let i = index">
+  <app-odd *ngIf="(i + 1) % 2 !== 0" [currCount]="i + 1"></app-odd>
+  <app-even *ngIf="(i + 1) % 2 === 0" [currCount]="i + 1"></app-even>
+</div>

@@ -1,0 +1,28 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  button {
+    margin: 0 10px;
+  }
+}
+
+.btn {
+  background-color: lightblue;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+  &.success {
+    background-color: lightgreen;
+  }
+  &.danger {
+    background-color: lightcoral;
+  }
+}
